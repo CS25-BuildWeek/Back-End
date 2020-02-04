@@ -99,8 +99,13 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-db_from_en = dj_database_url.config(conn_max_age=500)
-DATABASES["default"].update(db_from_en)
+# db_from_en = dj_database_url.config(conn_max_age=500)
+# DATABASES["default"].update(db_from_en)
+DATABASES['default'] = dj_database_url.config(conn_max_age=500)
+DATABASES['default'] = dj_database_url.config(
+    defualt='postgres://ynlmjxuqrynbfo:5eb0a72f9426374a8d0529f4b2235e032db54d78b7acd74eac5e2abfc288c526@ec2-54-80-184-43.compute-1.amazonaws.com:5432/d7ivp0sdoiq2rm')
+DATABASES['default'] = dj_database_url.parse(
+    'postgres://ynlmjxuqrynbfo:5eb0a72f9426374a8d0529f4b2235e032db54d78b7acd74eac5e2abfc288c526@ec2-54-80-184-43.compute-1.amazonaws.com:5432/d7ivp0sdoiq2rm')
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
