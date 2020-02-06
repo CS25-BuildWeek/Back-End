@@ -49,8 +49,8 @@ class World:
             previous_room = room
             room_count += 1
 w = World()
-num_rooms = 100
-width = 10
+num_rooms = 200
+width = 20
 height = 10
 Room = Room
 w.generate_rooms(width, height, num_rooms, Room)
