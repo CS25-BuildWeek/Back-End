@@ -4,55 +4,55 @@ import random
 Room.objects.all().delete()
 
 rooms = {
-    1: {"name": "Cave",
+    1: {"title": "Cave",
         "description": "dark spooky cave"},
-    2: {"name": "Church",
+    2: {"title": "Church",
         "description": "grand cathedral"},
-    3: {"name": "Outside Cave Entrance",
+    3: {"title": "Outside Cave Entrance",
         "description": "North of you, the cave mount beckons."},
-    4: {"name": "Foyer",
+    4: {"title": "Foyer",
         "description": "Dim light filters in from the south. Dusty passages run north and east."},
-    5: {"name": "Grand Overlook",
+    5: {"title": "Grand Overlook",
         "description": "A steep cliff appears before you, falling into the darkness. Ahead to the north, a light flickers in the distance, but there is no way across the chasm."},
-    6: {"name": "Narrow Passage",
+    6: {"title": "Narrow Passage",
         "description": "The narrow passage bends here from west to north. The smell of gold permeates the air."},
-    7: {"name": "Treasure Chamber",
+    7: {"title": "Treasure Chamber",
         "description": "You've found the long-lost treasure chamber! Sadly, it has already been completely emptied by earlier adventurers. The only exit is to the south."},
-    8: {"name": "Maids Chamber",
+    8: {"title": "Maids Chamber",
         "description": "Dark room full of old antiquities"},
-    9: {"name": "King's Dining Room",
+    9: {"title": "King's Dining Room",
         "description": "Large room with massive dinner table "},
-    10: {"name": "Courtyard",
+    10: {"title": "Courtyard",
         "description": "Outdoor room with a large fountain and benches "},
-    11: {"name": "Kitchen",
+    11: {"title": "Kitchen",
         "description": "Massive kitchen filled with pots, pans and various cookingware "},
-    12: {"name": "Guest Room",
+    12: {"title": "Guest Room",
         "description": "Large room with a bed and sleeping quarters for any guests "},
-    13: {"name": "Grand Room",
+    13: {"title": "Grand Room",
         "description": "Largest room in the Castle with the kings and queens throne inside "},
-    14: {"name": "Safe Room",
+    14: {"title": "Safe Room",
         "description": "Small room filled with weapons to protect the Queen and King "},
-    15: {"name": "Guards Chamber",
+    15: {"title": "Guards Chamber",
         "description": "you've entered the guards chamber, it is filled with beds for the King's guard and swords "},
-    16: {"name": "Buttery",
+    16: {"title": "Buttery",
         "description": "you've entered the buttery, it has a distinct smell of butter and other assorted foods "},
-    17: {"name": "Library",
+    17: {"title": "Library",
         "description": "the dimly lit chamber filled with lanterns and books, a recipe for disaster! "},
-    18: {"name": "Icehouse",
+    18: {"title": "Icehouse",
         "description": "you've entered the darkest room in the castle, filled with ice and extremely insulated to keep everything inside ;) "},
-    19: {"name": "The Dungeon",
+    19: {"title": "The Dungeon",
         "description": "this is the most dangerous room in the house, most will not return once they enter... "},
-    20: {"name": "The Gatehouse",
+    20: {"title": "The Gatehouse",
         "description": "you have entered the gatehouse, over looking the border walls of the castle "},
-    21: {"name": "Place of Arms",
+    21: {"title": "Place of Arms",
         "description": "You have entered the most powerful room in the Castle, you can find weapons and armor in here! "},
-    22: {"name": "The Gallery",
+    22: {"title": "The Gallery",
         "description": "the gallery is the most historical room in the castle, all prior kings and queens are remembered here! "},
-    23: {"name": "North Tower Room",
+    23: {"title": "North Tower Room",
         "description": "this room over looks the edges of the Castle walls, great for protecting the Castle "},
-    24: {"name": "Stable House",
+    24: {"title": "Stable House",
         "description": "you've entered the stable house, filled with beautiful horses and their not so beautiful stench!"},
-    25: {"name": "Barbican",
+    25: {"title": "Barbican",
         "description": "beware trespassers the sign says, this room is filled with traps! Tread carefully! "},
 
 } 
@@ -111,9 +111,9 @@ class World:
         direction = 1 #1:east, -1:west
         # While there are rooms to be created...
         previous_room = None
-        room_titles = ["Cave"]
-        room_descriptions =[ "dark spooky cave"]
-        room.save()
+        room_titles = rooms['name']
+        room_descriptions = rooms['description']
+        # room.save()
         while room_count < num_rooms:
             if direction > 0 and x < size_x - 5:
                 room_direction = "e"
