@@ -13,7 +13,7 @@ class World:
         self.grid = [None] * size_y
         self.width = size_x
         self.height = size_y
-        self.Room = Room
+        self.Room = Room 
         for i in range(len(self.grid)):
             self.grid[i] = [None] * size_x
         x = -5
@@ -49,8 +49,8 @@ class World:
             previous_room = room
             room_count += 1
 w = World()
-num_rooms = 200
-width = 20
-height = 10
+num_rooms = 225
+width = 15
+height = 15
 Room = Room
 w.generate_rooms(width, height, num_rooms, Room)
