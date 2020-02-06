@@ -65,7 +65,7 @@ class World:
         passages run north and east."""]
         # room.save()
         while room_count < num_rooms:
-            if direction > 0 and x < size_x - 5:
+            if direction > 0 and x < size_x - 4:
                 room_direction = "e"
                 x += 5
             elif direction < 0 and x > 0:
@@ -74,11 +74,11 @@ class World:
             else:
                 # If we hit a wall, turn north and reverse direction
                 room_direction = "n"
-                y += 5
+                y += 2
                 direction *= -1
             # Create a room in the given direction
             import random
-            num = random.choice(range(0,5))
+            num = random.choice(range(0,8))
             room = Rooms(room_count, room_titles[num], room_descriptions[num], x, y)
             room.save()
             self.grid[y][x] = room
