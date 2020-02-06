@@ -5,7 +5,24 @@ from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
 import uuid
 
+# class Room(models.Model):
+#     id = models.IntegerField(default=0, primary_key=True)
+#     x_cord = models.IntegerField(default=0)
+#     y_cord = models.IntegerField(default=0)
+#     title = models.CharField(max_length=50, default="DEFAULT TITLE")
+#     description = models.CharField(max_length=500, default="DEFAULT DESCRIPTION")
+#     n_to = models.IntegerField(default=0)
+#     s_to = models.IntegerField(default=0)
+#     e_to = models.IntegerField(default=0)
+#     w_to = models.IntegerField(default=0)
 
+#     def connect_rooms(self, connecting_room, direction):
+#         reverse_dirs = {"n": "s", "s": "n", "e": "w", "w": "e"}
+#         reverse_dir = reverse_dirs[direction]
+#         setattr(self, f"{direction}_to", connecting_room.id)
+#         setattr(connecting_room, f"{reverse_dir}_to", self.id)
+#         self.save()
+#         connecting_room.save()
 class Room(models.Model):
     title = models.CharField(max_length=50, default="DEFAULT TITLE")
     description = models.CharField(
