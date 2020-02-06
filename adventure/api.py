@@ -65,7 +65,7 @@ def move(request):
 @api_view(["POST"])
 def say(request):
     # IMPLEMENT
-    return JsonResponse({'error': "Not yet implemented"}, safe=True, status=500)
+    return JsonResponse({'error':"Not yet implemented"}, safe=True, status=500)
 
 
 @api_view(["GET"])
