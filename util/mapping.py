@@ -1,9 +1,11 @@
-from adventure.models import Player, Room
+from django.contrib.auth.models import User
 import random
 
 Room.objects.all().delete()
+rooms = [
 
-rooms = {
+]
+rooms = {#make this an array
     1: {"title": "Cave",
         "description": "dark spooky cave"},
     2: {"title": "Church",
@@ -92,10 +94,11 @@ class Room:
 
 class World:
 
-    def __init__(self):
+    def __init__(self,rooms):
         self.grid = None
         self.width = 0
         self.height = 0
+        self.rooms = rooms
     def generate_rooms(self, size_x, size_y, num_rooms):
         
         # Initialize the grid
@@ -111,8 +114,14 @@ class World:
         direction = 1 #1:east, -1:west
         # While there are rooms to be created...
         previous_room = None
-        room_titles = rooms['name']
-        room_descriptions = rooms['description']
+        room_titles = ["Outside Cave Entrance", "Foyer", "Grand Overlook", "Narrow Passage", "Treasure Chamber"]
+        room_descriptions = ["North of you, the cave mount beckons", """Dim light filters in from the south. Dusty
+        passages run north and east.""", """A steep cliff appears before you, falling
+        into the darkness. Ahead to the north, a light flickers in
+        the distance, but there is no way across the chasm.""", """The narrow passage bends here from west
+        to north. The smell of gold permeates the air.""", """You've found the long-lost treasure
+        chamber! Sadly, it has already been completely emptied by
+        earlier adventurers. The only exit is to the south."""]
         # room.save()
         while room_count < num_rooms:
             if direction > 0 and x < size_x - 5:
@@ -192,7 +201,7 @@ class World:
         print(str)
 
 
-w = World()
+w = World(rooms)
 num_rooms = 400
 width = 20
 height = 20
