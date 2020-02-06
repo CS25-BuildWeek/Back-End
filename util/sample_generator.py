@@ -4,7 +4,7 @@
 # You can modify generate_rooms() to create your own
 # procedural generation algorithm and use print_rooms()
 # to see the world.
-
+# from adventure.models import Room
 
 class Room:
     def __init__(self, id, name, description, x, y):
