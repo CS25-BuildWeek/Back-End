@@ -134,6 +134,8 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ORGIN_WHITELIST = 'localhost:3000',
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
